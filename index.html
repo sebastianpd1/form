@@ -8,7 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
-<body>
+<body onload="init();">
 
     <div class="container">
 
@@ -17,20 +17,25 @@
                 <h1>Payment form example</h1>
             </div>
             <div class="card-body">
-                <div class="alert alert-danger" role="alert">
-                Some fields are missing!!!!!!!
+                <div class="alert alert-danger d-none" role="alert" id="alert">
+                </div>
+                <div class="" role="alert" id="alert2">
+                </div>
+                <div class="" role="alert" id="alert3">
+                </div>
+                <div class="" role="alert" id="alert4">
                 </div>
 
-                <form action="">
+                <form action="" id="form">
                     <div class="form-row">
                         <div class="form-group col">
                             <label for="">Card #</label>
-                            <input class="form-control" type="text" placeholder="XXXXXXXXXXXXXXXXX">
+                            <input id="card" class="notEmpty number form-control" type="text" placeholder="XXXXXXXXXXXXXXXXX">
                         </div>
 
                          <div class="form-group col-2 mx-3">
                              <label for="">CVC #</label>
-                             <input class="form-control" type="text" placeholder="0000">
+                             <input id="cvc" class="notEmpty number form-control" type="text" placeholder="0000">
                         </div>
 
                          <div class="form-group col-4">
@@ -39,7 +44,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-white border-0">$</span>
                                 </div>
-                                <input class="form-control" type="text" placeholder="Amount">
+                                <input id="amount" class="notEmpty number form-control" type="text" placeholder="Amount">
                                 </div>
                         </div>
 
@@ -48,15 +53,15 @@
                     <div class="form-row">
                         <div class="form-group col">
                             <label for="">First Name</label>
-                            <input class="form-control mb-2" type="text" placeholder="">
+                            <input id="firstName" class="notEmpty string form-control mb-2" type="text" placeholder="">
 
                             <label for="">City</label>
-                            <input class="form-control mb-2" type="text" placeholder="">
+                            <input id="city" class="notEmpty string form-control mb-2" type="text" placeholder="">
 
                             <label for="">We accept</label><br>
-                            <div  class =" col-7 bg-dark round m-1 pl-1 text-white text-center p-0 rounded">
+                            <div  class ="col-7 bg-dark round m-1 pl-1 text-white text-center p-0 rounded">
                                 <div class="form-check form-check-inline mr-2">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                    <input id="weAccept" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
                                     <label class="form-check-label" for="inlineRadio1"><i class="fab fa-cc-visa fa-2x"></i></label>
                                 </div>
                                 <div class="form-check form-check-inline m-2">
@@ -79,13 +84,13 @@
                  <!-- Second Group -->
                          <div class="form-group col">
                              <label for="">Last Name</label>
-                             <input class="form-control mb-2" type="text" placeholder="">
+                             <input id="lastName" class="notEmpty string form-control mb-2" type="text" placeholder="">
 
                              <div class="form-row mb-2">
 
                                  <div class="col">
                                      <label for="">State</label>
-                                     <select class="form-control" id="exampleFormControlSelect1">
+                                     <select id="state" class="notEmptystate form-control" id="exampleFormControlSelect1" placeholder="Pick a State">
                                         <option default>Pick a state</option>
                                         <option>Colorado</option>
                                         <option>California</option>
@@ -95,11 +100,11 @@
                                  </div>
                                  <div class="col">
                                      <label for="">Postal Code</label>
-                                     <input class="form-control" type="text">
+                                     <input id="postalCode" class="notEmpty number form-control" type="text">
                                  </div>
                              </div>
                                  <label for="">Message</label>
-                                 <textarea name="" id="" cols="65" rows="5"></textarea>
+                                 <textarea id="message" name="" id="" cols="65" rows="5"></textarea>
                                  <div>
                                     <small class="text-muted">Add any notes here</small>
                                  </div>
@@ -113,20 +118,20 @@
                 <!-- ******************************* -->
 
 
-                </form>
-
-
             </div>
             <div class="card-footer text-right">
                 <input class="btn btn-secondary" type="button" value="Cancel">
-                <input class="btn btn-primary" type="button" value="Send">
+                <input class="btn btn-primary" type="button" value="Send" id="button">
             </div>
+</form>
+
+
         </div>
 
 
     </div>
 
-
+<script src="script.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
